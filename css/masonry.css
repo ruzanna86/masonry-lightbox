@@ -1,0 +1,15 @@
+.rem-masonry{
+    list-style: none;
+    position: relative;
+}
+
+.rem-masonry li{
+    height: auto;
+    position: absolute;
+}
+
+.rem-masonry li img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
