@@ -12,24 +12,30 @@
     };
 
     $.fn.masonry = function (options) {
+        $(window).resize(function(){
+            // $('.rem-masonry').masonry({options});
+            console.log(111);
+        });
         this.options = $.extend({}, defaults, options);
         var that = this;
         var topPosition = 0;
         var leftPosition = 0;
         var oneColHeight = [];
-        $(this).css('width', $(window).width());
 
         this.columnCount = Math.floor(($(window).width() / parseInt(this.options.width)));
+        $(this).css('width', (parseInt(this.options.width) * this.columnCount)+'px');
+
         $(this.children()).css({
             'width': this.options.width,
-            'padding': this.options.padding
+            'padding': this.options.padding,
+            'left': 0
         });
 
         this.updateItem = function(i){
-            $(that[0].children[i]).css({
+            $(that[0].children[i]).animate({
                 'left': leftPosition,
                 'top': topPosition
-            });
+            },700);
         };
         for(var j = 0; j < this.columnCount; j++){
             oneColHeight.push(parseInt($(this[0].children[j]).outerHeight(true)));
@@ -59,6 +65,34 @@
             }
         }
 
+        // Lightbox Click Event
+        $(that.children()).on( "click",function(){
+            var imageSrc = $(this).find('img').attr("src");
+            var imageAlt = $(this).find('img').attr("alt");
+
+            $('body').append(
+                "<div class='remMasonry-modal-overlay'>"+
+                "<div class='remMasonry-modal'>"+
+                "<div id='remMasonry-modal-close' class='close-container'>" +
+                "<div class='leftright'></div>" +
+                "<div class='rightleft'></div>" +
+                "<label class='close'>close</label>" +
+                "</div>" +
+                "<img src='" + imageSrc + "' alt='" + imageAlt + "' class='remMasonry-modal-img' />"+
+                "</div>"+
+                "</div>"
+            ).show('slow');
+
+            $('#remMasonry-modal-close').click(function(){
+                $('.remMasonry-modal-overlay').hide('fast', function(){
+                    $(this).remove();
+                });
+            });
+        });
+
+
+
     };
+
 
 })(jQuery);
