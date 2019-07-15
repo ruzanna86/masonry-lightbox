@@ -12,58 +12,73 @@
     };
 
     $.fn.masonry = function (options) {
-        $(window).resize(function(){
-            // $('.rem-masonry').masonry({options});
-            console.log(111);
-        });
         this.options = $.extend({}, defaults, options);
         var that = this;
-        var topPosition = 0;
-        var leftPosition = 0;
-        var oneColHeight = [];
 
-        this.columnCount = Math.floor(($(window).width() / parseInt(this.options.width)));
-        $(this).css('width', (parseInt(this.options.width) * this.columnCount)+'px');
+        function init(that){
+            var topPosition = 0;
+            var leftPosition = 0;
+            var oneColHeight = [];
 
-        $(this.children()).css({
-            'width': this.options.width,
-            'padding': this.options.padding,
-            'left': 0
-        });
+            // Check if options width greater than window width
+            if(parseInt(that.options.width) >= $(window).width() ){
+                that.columnCount = 1;
+                $(that).css('width', ($(window).width() - 20)+'px');
+                $(that.children()).css({
+                    'width': '100%',
+                    'padding': that.options.padding,
+                    'left': 0
+                });
 
-        this.updateItem = function(i){
-            $(that[0].children[i]).animate({
-                'left': leftPosition,
-                'top': topPosition
-            },700);
-        };
-        for(var j = 0; j < this.columnCount; j++){
-            oneColHeight.push(parseInt($(this[0].children[j]).outerHeight(true)));
-            if(j == 0){
-                leftPosition = 0;
             }else{
-                leftPosition += parseInt(this.options.width);
+                that.columnCount = Math.floor(($(window).width() / parseInt(that.options.width)));
+                $(that).css('width', (parseInt(that.options.width) * that.columnCount)+'px');
+                $(that.children()).css({
+                    'width': that.options.width,
+                    'padding': that.options.padding,
+                    'left': 0
+                });
             }
-            topPosition = 0;
-            this.updateItem(j);
-        }
 
-        for(var i = 0; i <  this.children().length; i++){
-            if(i >= this.columnCount){
-                var minHeight = oneColHeight[0];
-                for(var j = 0; j < oneColHeight.length; j++){
-                    if(oneColHeight[j] < minHeight){
-                        minHeight = oneColHeight[j];
+            // Update positions of items
+            that.updateItem = function(i){
+                $(that[0].children[i]).animate({
+                    'left': leftPosition,
+                    'top': topPosition
+                },500);
+            };
+
+            for(var i = 0; i <  that.children().length; i++){
+                if(i < that.columnCount){
+                    oneColHeight.push(parseInt($(that[0].children[i]).outerHeight(true)));
+                    if(i == 0){
+                        leftPosition = 0;
+                    }else{
+                        leftPosition += parseInt(that.options.width);
                     }
+                    topPosition = 0;
+                    that.updateItem(i);
+                }else{
+                    var minHeight = oneColHeight[0];
+                    for(var j = 0; j < oneColHeight.length; j++){
+                        if(oneColHeight[j] < minHeight){
+                            minHeight = oneColHeight[j];
+                        }
+                    }
+                    var currentIndex = oneColHeight.indexOf(minHeight);
+                    leftPosition = currentIndex * parseInt(that.options.width);
+                    topPosition = minHeight;
+                    oneColHeight[currentIndex] = minHeight + parseInt($(that[0].children[i]).outerHeight(true) );
+                    that.updateItem(i);
                 }
-                var currentIndex = oneColHeight.indexOf(minHeight);
-                leftPosition = currentIndex * parseInt(this.options.width);
-                topPosition = minHeight;
-                oneColHeight[currentIndex] = minHeight + parseInt($(this[0].children[i]).outerHeight(true) );
-                this.updateItem(i);
-
             }
         }
+
+        init(this);
+
+        $(window).resize(function() {
+            init(that);
+        });
 
         // Lightbox Click Event
         $(that.children()).on( "click",function(){
@@ -81,16 +96,14 @@
                 "<img src='" + imageSrc + "' alt='" + imageAlt + "' class='remMasonry-modal-img' />"+
                 "</div>"+
                 "</div>"
-            ).show('slow');
+            ).show(500);
 
             $('#remMasonry-modal-close').click(function(){
-                $('.remMasonry-modal-overlay').hide('fast', function(){
+                $('.remMasonry-modal-overlay').hide(500, function(){
                     $(this).remove();
                 });
             });
         });
-
-
 
     };
 
