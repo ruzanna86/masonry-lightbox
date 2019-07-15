@@ -15,6 +15,18 @@
         this.options = $.extend({}, defaults, options);
         var that = this;
 
+        if (this.length === 0) {
+            return this;
+        }
+
+        // call one for multiple elements
+        if (this.length > 1) {
+            this.each(function() {
+                $(this).masonry(options);
+            });
+            return this;
+        }
+
         function init(that){
             var topPosition = 0;
             var leftPosition = 0;
@@ -42,10 +54,10 @@
 
             // Update positions of items
             that.updateItem = function(i){
-                $(that[0].children[i]).animate({
+                $(that[0].children[i]).css({
                     'left': leftPosition,
                     'top': topPosition
-                },500);
+                });
             };
 
             for(var i = 0; i <  that.children().length; i++){
@@ -70,6 +82,15 @@
                     topPosition = minHeight;
                     oneColHeight[currentIndex] = minHeight + parseInt($(that[0].children[i]).outerHeight(true) );
                     that.updateItem(i);
+                }
+                if(i == (that.children().length - 1)){
+                    var maxHeight = oneColHeight[0];
+                    for(j = 0; j < oneColHeight.length; j++){
+                        if(oneColHeight[j] > maxHeight){
+                            maxHeight = oneColHeight[j];
+                        }
+                    }
+                    $(that).css('height', maxHeight +'px');
                 }
             }
         }

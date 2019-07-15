@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97e03eff-c654-4235-ae17-dcd8045f3d08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/masonry.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/masonry.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/masonry.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/masonry.js" afterDir="false" />
@@ -31,9 +32,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="78" />
-          <entry key="HTML" value="210" />
-          <entry key="JavaScript" value="1267" />
+          <entry key="CSS" value="101" />
+          <entry key="HTML" value="282" />
+          <entry key="JavaScript" value="1445" />
         </counts>
       </usages-collector>
     </session>
@@ -43,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="585">
+              <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -52,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/masonry.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="82" column="31" lean-forward="true" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+            <state relative-caret-position="442">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -61,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/masonry.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+            <state relative-caret-position="493">
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -109,7 +110,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1386" />
@@ -127,11 +128,6 @@
             <path>
               <item name="masonry-lightbox" type="b2602c69:ProjectViewProjectNode" />
               <item name="masonry-lightbox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="masonry-lightbox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="masonry-lightbox" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -170,12 +166,12 @@
       <option name="presentableId" value="Default" />
       <updated>1562913709323</updated>
       <workItem from="1562913710691" duration="9121000" />
-      <workItem from="1563167164976" duration="7081000" />
+      <workItem from="1563167164976" duration="12474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16202000" />
+    <option name="totallyTimeSpent" value="21595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -218,24 +214,24 @@
     <entry file="file://$PROJECT_DIR$/images/photo-1548678967-f1aec58f6fb2.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/masonry.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="60" column="18" lean-forward="true" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+        <state relative-caret-position="585">
+          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/masonry.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="493">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/masonry.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="82" column="31" lean-forward="true" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+        <state relative-caret-position="442">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
