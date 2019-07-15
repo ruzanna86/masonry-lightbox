@@ -27,7 +27,7 @@
             return this;
         }
 
-        function init(that){
+        function init(){
             var topPosition = 0;
             var leftPosition = 0;
             var oneColHeight = [];
@@ -95,7 +95,7 @@
             }
         }
 
-        init(this);
+        init();
 
         $(window).resize(function() {
             init(that);
